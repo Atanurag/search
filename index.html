@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@600&display=swap');
+
+
+
+.aa{
+ text-decoration: none;
+  margin-top:31px;
+}
+
+.ppp{
+  color: black;
+  text-decoration: none;
+font-size: 18px;
+}
+
+  </style>
+  </head>
+  <body style="background-color: #f7f7f7;">
+
+
+    
+<div class="fluid dad " style="
+">
+
+  <div class="container d-flex justify-content-center "style="height: 83px;
+">
+<div class="headtext " style="">
+  <span class="text-center" style="font-size:73px;  font-family: 'Hind Siliguri', sans-serif;  margin-left: -9px; color:#3054FF;">S</span>
+<span class="text-center" style="font-size:73px;  font-family: 'Hind Siliguri', sans-serif;  margin-left: -9px;">e</span>
+<span class="text-center" style="font-size:73px;  font-family: 'Hind Siliguri', sans-serif;  margin-left: -9px;">a</span>
+<span class="text-center" style="font-size:73px;  font-family: 'Hind Siliguri', sans-serif;  margin-left: -9px;">r</span>
+<span class="text-center" style="font-size:73px;  font-family: 'Hind Siliguri', sans-serif; margin-left: -9px; ">c</span>
+<span class="text-center" style="font-size:73px;  font-family: 'Hind Siliguri', sans-serif;  margin-left: -9px;">h</span>
+
+</div>
+
+
+
+
+    </div>
+
+<div class="d-flex justify-content-center">
+  
+
+    <div class="col-6 "style="position: relative;
+">
+  
+
+<input type="text" name="" class="form-control"style="width: 100%; border-radius: 33px; font-size: 17px;
+"id="inp">
+
+
+<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"style="width: 32px; position: absolute; top: 9%; right: 1%; color: #B9B9B9 ;
+ z-index:999999 ;background-color: white; border-radius: 33px;" onclick="im()">
+  <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+
+  <p style="position:absolute;" id="tr"></p>
+  <p style="position:absolute;top: 191%;" id="time"> </p>
+
+</svg>
+
+
+
+
+</div>
+</div>
+
+
+<div class="d-flex justify-content-center">
+
+<div class="d-flex justify-content-start flex-column" id="box" style="width: 70%;margin-top:45px; ">
+
+
+<a href="d" class="aa" id="o1"></a>
+<a href="c"  class="ppp" id="e1"></a>
+
+
+<a href="d" class="aa" id="o2"></a>
+<a href="c"  class="ppp" id="e2"></a>
+
+
+<a href="d" class="aa" id="o3"></a>
+<a href="c"  class="ppp" id="e3"></a>
+
+
+
+
+<a href="d" class="aa" id="o4"></a>
+<a href="c"  class="ppp" id="e4" ></a>
+
+
+
+<a href="d" class="aa" id="o5"></a>
+<a href="c"  class="ppp" id="e5"></a>
+
+
+
+
+<a href="d" class="aa" id="o6"></a>
+<a href="c"  class="ppp"id="e6" ></a>
+
+
+
+
+
+<a href="d" class="aa" id="o7"></a>
+<a href="c"  class="ppp"  id="e7"></a>
+
+
+
+
+
+</div>
+
+</div>
+
+
+</div>
+   
+
+
+
+
+
+    <script >
+
+
+const gtt=()=>{
+
+ 
+
+
+let p=document.getElementById("pp");
+let p1=document.getElementById("pp1");
+
+p.innerHTML=i.value;
+p1.innerHTML=i.value;
+}
+      
+function im(){
+/*
+fetch("http://api.serpstack.com/search?access_key=351c3c9ae6da79f2e21d4a7de36d355c&query=mcdonalds").then
+((res)=>{
+
+  res.json()
+}).then(
+(data)=>{
+  console.log(data);
+}
+)
+*/
+
+
+
+
+ var i=document.getElementById('inp').value;
+
+fetch(`http://api.serpstack.com/search?access_key=fe74a764ed63ed2df98c439f55e22f79&query=${i}`)
+.then((e)=> e.json())
+.then((d)=>{
+  console.log(d)
+  var pp=d.organic_results;
+  console.log(d.organic_results)
+
+var re=d.search_information.total_results;
+
+ var tim=d.search_information.time_taken_displayed;
+//let box=document.getElementById("box");
+
+let resu=document.getElementById("tr").innerHTML=`About  ${re} results `;
+
+let time=document.getElementById("time").innerHTML=`(${tim}seconds)`;
+
+
+let o1=document.getElementById("o1");
+o1.href=pp[0].url;
+o1.innerHTML=pp[0].url;
+
+let e1=document.getElementById("e1");
+e1.innerHTML=pp[0].title;
+e1.href=pp[0].url;
+
+
+let o2=document.getElementById("o2");
+o2.href=pp[1].url;
+o2.innerHTML=pp[1].url;
+let e2=document.getElementById("e2");
+
+e2.innerHTML=pp[1].title;
+e2.href=pp[1].url;
+
+
+let o3=document.getElementById("o3");
+o3.href=pp[1].url;
+
+o3.innerHTML=pp[2].url;
+
+let e3=document.getElementById("e3");
+e3.innerHTML=pp[2].title;
+e3.href=pp[2].url;
+let o4=document.getElementById("o4");
+
+o4.href=pp[3].url;
+
+o4.innerHTML=pp[3].url;
+
+
+let e4=document.getElementById("e4");
+e4.innerHTML=pp[3].title;
+e4.href=pp[3].url;
+
+let o5=document.getElementById("o5");
+
+o5.href=pp[4].url;
+
+o5.innerHTML=pp[4].url;
+
+let e5=document.getElementById("e5");
+
+e5.innerHTML=pp[4].title;
+e5.href=pp[4].url;
+let o6=document.getElementById("o6");
+
+o6.href=pp[5].url;
+
+o6.innerHTML=pp[5].url;
+
+let e6=document.getElementById("e6");
+e6.innerHTML=pp[5].title;
+e6.href=pp[5].url;
+
+let o7=document.getElementById("o7");
+
+o7.href=pp[6].url;
+
+o7.innerHTML=pp[6].url;
+let e7=document.getElementById("e7");
+
+e7.innerHTML=pp[6].title;
+e7.href=pp[6].url;
+
+
+
+
+
+
+
+
+
+
+//var als=d.top_stories[2].url;
+
+
+/*
+
+for(var i=0;i<pp.length;i++){
+let a=document.createElement("a");
+var p=document.createElement("a");
+
+a.setAttribute("class","aa")
+p.setAttribute("class","ppp")
+
+box.appendChild(a);
+box.appendChild(p);
+a.innerHTML=pp[i].url;
+a.href=pp[i].url;
+p.innerHTML=pp[i].title;
+p.href=pp[i].url;
+
+console.log(pp[i].url);
+
+}
+*/
+
+
+
+
+})
+
+}
+
+
+
+    </script>
+
+    
+  </body>
+</html>
