@@ -166,7 +166,7 @@ fetch("https://api.serpstack.com/search?access_key=351c3c9ae6da79f2e21d4a7de36d3
 
  var i=document.getElementById('inp').value;
 
-fetch(`http://api.serpstack.com/search?access_key=fe74a764ed63ed2df98c439f55e22f79&query=${i}`)
+fetch(`https://api.serpstack.com/search?access_key=fe74a764ed63ed2df98c439f55e22f79&query=${i}`)
 .then((e)=> e.json())
 .then((d)=>{
   console.log(d)
